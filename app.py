@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from dbfct import creer_table, ajout_data, voir_data, voir_unique_texte, get_texte, edit_texte_data
+from gsheetsdb import connect
 
 def main():
 	st.title("BDD App")
@@ -77,7 +78,6 @@ def main():
 		if st.button("Mettre à jour données"):
 			edit_texte_data(new_texte, new_etat, new_date_etat, texte, etat, date_etat)
 			st.success("Les données ont bien été mise à jour :{}".format(texte, new_texte))
-
 
 
 
